@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: azure;
+  font-family: "Dancing Script", cursive;
+}
+
+/* =============== Nav-Bar ================ */
+.nav-bar {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  background-color: rgb(21, 1, 36);
+}
+.nav-bar .logo {
+  height: 45px;
+  width: 45px;
+  background: url(./images/logo.png);
+  background-size: cover;
+  border-radius: 100px;
+}
+.nav-bar .right {
+  display: flex;
+  padding: 2vh 4vw;
+}
+.nav-bar .name {
+  padding: 1vh 1vw;
+}
+.left a {
+  padding: 0 1vw;
+  text-decoration: none;
+}
+.nav-bar .left {
+  display: flex;
+  margin-left: auto;
+  background-color: rgb(21, 1, 36);
+  padding: 3vh 4vw;
+  text-decoration: none;
+}
+
+/* =============== Main ================ */
+.mainIndex {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(./images/background.jpg);
+  background-size: cover;
+  padding-top: 20vh;
+}
+.mainIndex p {
+  font-size: 35px;
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+.mainIndex input {
+  margin-top: 4vh;
+  font-size: 30px;
+  margin-left: 30vw;
+  color: black;
+}
