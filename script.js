@@ -1,6 +1,6 @@
 // console.log("hello brother");
 const input = document.querySelector(".search");
-console.log(input);
+// console.log(input);
 
 const getData = (e) => {
   console.log("get data", e);

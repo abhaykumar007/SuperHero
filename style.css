@@ -3,9 +3,10 @@
   padding: 0;
   overflow: hidden;
   color: azure;
-  font-family: "Dancing Script", cursive;
 }
-
+a {
+  text-decoration: none;
+}
 /* =============== Nav-Bar ================ */
 .nav-bar {
   width: 100vw;
@@ -37,9 +38,11 @@
   background-color: rgb(21, 1, 36);
   padding: 3vh 4vw;
   text-decoration: none;
+  margin-top: 1vh;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* =============== Main ================ */
+/* =============== MainIndex ================ */
 .mainIndex {
   width: 100vw;
   height: 100vh;
@@ -52,6 +55,7 @@
   font-size: 35px;
   padding-left: 15vw;
   padding-right: 15vw;
+  font-family: "Dancing Script", cursive;
 }
 .mainIndex input {
   margin-top: 4vh;
