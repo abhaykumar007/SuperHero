@@ -57,21 +57,38 @@ a {
   padding-right: 15vw;
   font-family: "Dancing Script", cursive;
 }
-.mainIndex input,
-.mainIndex ul {
+.mainIndex input {
   margin-top: 4vh;
   font-size: 30px;
   margin-left: 30vw;
   color: black;
-  /* display: flex; */
 }
-.mainIndex ul img {
-  height: 20vh;
-  width: 20vw;
+.mainIndex .card-container {
+  width: 25vw;
+  height: 100vh;
+  padding: 10px 0;
+  margin-left: 30vw;
+  font-size: 22px;
+  margin-right: 40vw;
+  overflow: auto;
+  color: black;
+  /* background-color: whitesmoke; */
 }
 .mainIndex .result li {
   display: flex;
 }
-.mainIndex .result div {
-  flex-direction: column;
+.mainIndex .result .card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows: 1fr;
+}
+.mainIndex .result .card-content a {
+  display: block;
+}
+.mainIndex ul img {
+  height: 9rem;
+  width: 7rem;
+}
+.card-container .card-content .content {
+  padding-top: 15px;
 }
