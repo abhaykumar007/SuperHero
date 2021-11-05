@@ -57,9 +57,21 @@ a {
   padding-right: 15vw;
   font-family: "Dancing Script", cursive;
 }
-.mainIndex input {
+.mainIndex input,
+.mainIndex ul {
   margin-top: 4vh;
   font-size: 30px;
   margin-left: 30vw;
   color: black;
+  /* display: flex; */
+}
+.mainIndex ul img {
+  height: 20vh;
+  width: 20vw;
+}
+.mainIndex .result li {
+  display: flex;
+}
+.mainIndex .result div {
+  flex-direction: column;
 }
