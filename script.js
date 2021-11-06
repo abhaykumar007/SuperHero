@@ -50,9 +50,11 @@ async function handelFav(id) {
   const url = `https://superheroapi.com/api.php/1699068923618895/${id}`;
   let response = await fetch(url);
   const data = await response.json();
-  favList.push(data);
+  const ref = JSON.parse(localStorage.getItem("favList"));
+  favList = [...ref, data];
   localStorage.setItem("favList", JSON.stringify(favList));
 }
+
 function setFavList() {
   const ref = JSON.parse(localStorage.favList);
   console.log(ref);
