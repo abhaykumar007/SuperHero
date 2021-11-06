@@ -30,8 +30,39 @@
         <a href="favourites.html">Favourites</a>
       </ul>
     </nav>
-    <main class="mainIndex">
-      <div class="fav-card"></div>
+    <!--  -->
+    <main class="mainIndex fav-index">
+      <div class="fav-card">
+        <img src="./images/logo.png" alt="" />
+        <button id="heart">&#9825;</button>
+        <h2>Name</h2>
+      </div>
     </main>
   </body>
+  <script>
+    const card = document.querySelector(".fav-index");
+    // console.log(localStorage.favList);
+
+    function getData() {
+      const list = JSON.parse(localStorage.favList);
+      card.innerHTML = "";
+      list.map((element, i) => {
+        id = element.id;
+        card.innerHTML += `<div class="fav-card">
+        <img src="${element.image.url}" alt="" />
+        <button onclick="handelHeart(${id});" id="heart">❤️️</button>
+        <h2>${element.name}</h2>
+      </div>`;
+      });
+    }
+
+    function handelHeart(id) {
+      const list = JSON.parse(localStorage.favList);
+      console.log(id);
+      const newList = list.filter((element) => element.id != id);
+      localStorage.setItem("favList", JSON.stringify(newList));
+      getData();
+    }
+    getData();
+  </script>
 </html>

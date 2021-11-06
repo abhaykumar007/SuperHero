@@ -30,6 +30,7 @@
         <a href="favourites.html">Favourites</a>
       </ul>
     </nav>
+    
     <main class="mainIndex info-index">
       <div class="info-card">
         <img src="./images/logo.png" alt="" />
@@ -89,9 +90,13 @@
           </div>
         </div>
       </div>
+      
       <!--  <img src="${search.image.url}" alt="" /> -->
       <!-- &#9825; -->
+      <!--  <button><img src="heart1.png" alt=""></button> -->
+      <!--  -->
     </main>
+   
   </body>
 
   <script>
@@ -100,12 +105,19 @@
     const search = JSON.parse(localStorage.search);
     card.innerHTML = `    <main class="mainIndex info-index">
       <div class="info-card">
-        <img src="${search.image.url}" alt="" />
-        <button id="heart">&#9825;</button>
-        <h2>Power States</h2>
+         <img src="${search.image.url}" alt="" />
+        
         <div class="table">
+              <div class=" table-row info-card-header">
+                   <div class="table-cell">
+                        <h2>Power States</h2>
+                      </div>
+               <div class="table-cell table-cell-d">
+                  <button id="heart">&#9825;</button>
+               </div>
+         </div>
           <div class="table-row">
-            <div class="table-cell table-cell-h">
+            <div class="table-cell">
               <p>Intelligence</p>
             </div>
             <div class="table-cell table-cell-d">
