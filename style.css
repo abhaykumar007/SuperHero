@@ -2,10 +2,10 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  color: azure;
 }
 a {
   text-decoration: none;
+  color: azure;
 }
 /* =============== Nav-Bar ================ */
 .nav-bar {
@@ -49,47 +49,113 @@ a {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(./images/background.jpg);
   background-size: cover;
-  padding-top: 10vh;
 }
-.mainIndex p {
+.mainIndex .description {
   font-size: 35px;
+  padding-top: 10vh;
   padding-left: 15vw;
   padding-right: 15vw;
   font-family: "Dancing Script", cursive;
+  color: azure;
 }
 .mainIndex input {
   margin-top: 4vh;
   font-size: 30px;
   margin-left: 30vw;
-  color: black;
+  width: 30vw;
   outline: none;
 }
+
+/* ================ Card ================ */
 .mainIndex .card-container {
-  width: 26vw;
+  width: 30.25vw;
   height: 100vh;
-  padding: 10px 0;
   margin-left: 30vw;
   font-size: 22px;
   margin-right: 40vw;
   overflow: auto;
-  color: black;
-  /* background-color: whitesmoke; */
+}
+.mainIndex .result {
+  border-bottom: 2px solid rgb(15, 85, 15);
+  border-top: 2px solid rgb(15, 85, 15);
+  background-color: whitesmoke;
 }
 .mainIndex .result li {
   display: flex;
 }
 .mainIndex .result .card {
   display: grid;
+  height: 22vh;
   grid-template-columns: 1fr 2fr;
   grid-auto-rows: 1fr;
+  padding: 15px;
 }
-.mainIndex .result .card-content a {
+.mainIndex .result .card-content button {
   display: block;
+  margin-top: 3vh;
+  border-radius: 5px;
+  width: 10vw;
+
+  padding: 7px;
+  cursor: pointer;
+}
+.mainIndex .result .card-content .add-to-favourites {
+  background-color: chartreuse;
+}
+.mainIndex .result .card-content .search-btn {
+  background-color: grey;
 }
 .mainIndex ul img {
   height: 9rem;
   width: 7rem;
+  border-radius: 10px;
 }
-.card-container .card-content .content {
-  padding-top: 15px;
+
+/* ============= details =============== */
+
+.info-index .info-card {
+  padding: 0;
+  color: azure;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info-index .info-card img {
+  width: 20vw;
+  height: 50vh;
+  /* width: 5vw;
+  height: 10vh; */
+}
+.info-card button {
+  background-color: transparent;
+  color: red;
+  height: auto;
+  width: auto;
+  border: none;
+  /* font-size: 25px; */
+  cursor: pointer;
+}
+
+.info-card .table {
+  height: 100vh;
+  overflow: auto;
+}
+.info-index .info-card .table .table-row {
+  display: table;
+  font-size: 20px;
+  padding-top: 3vh;
+  padding-left: 5vw;
+  padding-right: 15vw;
+  width: 70%;
+  margin-left: 10vw;
+  margin-top: 0;
+  margin: 10px auto;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+}
+.info-card .table .table-row .table-cell {
+  display: table-cell;
+}
+.info-card .table .table-row .table-cell-d {
+  text-align: end;
 }

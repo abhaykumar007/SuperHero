@@ -1,5 +1,9 @@
 const input = document.getElementById("search");
 const result = document.getElementById("cardID");
+var id;
+var search;
+var favList;
+
 // console.log(result);
 result.innerHTML = "";
 // https://abhaykumar007.github.io/SuperHero/
@@ -17,22 +21,31 @@ async function getData() {
   const newData = data.results;
   console.log(newData);
   result.innerHTML = "";
-  if (inputVal.length > 0) {
+  if (inputVal.length !== 0) {
     newData.map((element, i) => {
-      result.innerHTML += `<ul class='result'">
-            <li class ='card'>
-              <img src='${element.image.url}' alt="" />
+      id = element.id;
+      result.innerHTML += `<ul class="result">
+              <li class="card">
+              <img src="${element.image.url}" alt="" />
               <div class="card-content">
-                <a class="content" href="">${element.name}</a>
-                <a class="content" href="">${element.biography.fullName}</a>
-                <a class="content" href="">Add to Favourites</a>
+                <h2>${element.name}</h2>
+                <button onclick="javascript : handelSearch(${id});" class="search-btn">Search</button>
+                <button class="add-to-favourites">Add to Favourites</button>
               </div>
             </li>
-          </ul>
-          <br />`;
+          </ul>`;
     });
   }
 }
+async function handelSearch(id) {
+  console.log(id);
+  const url = `https://superheroapi.com/api.php/1699068923618895/${id}`;
+  let response = await fetch(url);
+  const data = await response.json();
+  localStorage.setItem("search", JSON.stringify(data));
+  location.href = "./details.html";
+}
+
 function debounced(func, delay) {
   let timer;
   const debouncedFunction = () => {
