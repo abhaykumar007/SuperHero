@@ -50,9 +50,23 @@ async function handelFav(id) {
   const url = `https://superheroapi.com/api.php/1699068923618895/${id}`;
   let response = await fetch(url);
   const data = await response.json();
+  console.log(data);
   const ref = JSON.parse(localStorage.getItem("favList"));
-  favList = [...ref, data];
-  localStorage.setItem("favList", JSON.stringify(favList));
+  let flag = true;
+  ref.forEach((element) => {
+    if (element.id == data.id) {
+      flag = false;
+      alert(`${data.name} is Already added in list`);
+    }
+  });
+  if (ref == null || ref == undefined) {
+    flag = false;
+  }
+  if (flag) {
+    favList = [...ref, data];
+    localStorage.setItem("favList", JSON.stringify(favList));
+    alert(`${data.name} is Successfully added in list`);
+  }
 }
 
 function setFavList() {
