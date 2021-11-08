@@ -1,7 +1,6 @@
 const input = document.getElementById("search");
 const result = document.getElementById("cardID");
 var id;
-var search;
 var favList = [];
 
 result.innerHTML = "";
@@ -67,8 +66,8 @@ async function handelFav(id) {
     }
   }
   if (ref == null || ref == undefined) {
-    let favList = [data];
-    localStorage.setItem("favList", JSON.stringify(favList));
+    let list = [data];
+    localStorage.setItem("favList", JSON.stringify(list));
     alert(`${data.name} is Successfully added in list`);
   }
 }
