@@ -37,7 +37,7 @@ async function getData() {
   }
 }
 async function handelSearch(id) {
-  console.log(id);
+  // console.log(id);
   const url = `https://superheroapi.com/api.php/1699068923618895/${id}`;
   let response = await fetch(url);
   const data = await response.json();
@@ -59,9 +59,6 @@ async function handelFav(id) {
       alert(`${data.name} is Already added in list`);
     }
   });
-  if (ref == null || ref == undefined) {
-    flag = false;
-  }
   if (flag) {
     favList = [...ref, data];
     localStorage.setItem("favList", JSON.stringify(favList));
