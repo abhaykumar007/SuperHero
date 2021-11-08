@@ -85,7 +85,7 @@ a {
 }
 .mainIndex .result .card {
   display: grid;
-  height: 22vh;
+  height: auto;
   grid-template-columns: 1fr 2fr;
   grid-auto-rows: 1fr;
   padding: 15px;
@@ -164,7 +164,6 @@ a {
   margin-left: 10vw;
   margin-top: 0;
   margin: 10px auto;
-
   box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
   cursor: pointer;
 }
@@ -188,7 +187,7 @@ a {
 }
 .fav-index .fav-card {
   height: auto;
-  width: 15vw;
+  width: auto;
   color: black;
   margin: 5vh 5vw;
   background-color: rgba(255, 255, 255, 0.315);
@@ -199,7 +198,9 @@ a {
 .fav-card img {
   height: 30vh;
   width: 10vw;
-  padding: 2vh 2vw;
+  margin: 2vh 2vw;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px 1px #000;
 }
 .fav-card button {
   background-color: transparent;
@@ -209,4 +210,7 @@ a {
   /* border: none; */
   font-size: 25px;
   cursor: pointer;
+}
+.fav-card h2 {
+  margin: 1vh 0;
 }
