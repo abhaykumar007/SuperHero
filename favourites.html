@@ -55,17 +55,18 @@
           name = element.name;
           card.innerHTML += `<div class="fav-card">
         <img src="${element.image.url}" alt="" />
-        <button onclick="handelHeart(${id});" id="heart">❤️️</button>
+        <button onclick="handelHeart(${element});" id="heart">❤️️</button>
         <h2>${element.name}</h2>
       </div>`;
         });
       }
     }
 
-    function handelHeart(id) {
+    function handelHeart(hero) {
+      console.log("hero", hero);
       const list = JSON.parse(localStorage.favList);
       // console.log(ref);
-      const newList = list.filter((element) => element.id != id);
+      const newList = list.filter((element) => element.id != hero.id);
       localStorage.setItem("favList", JSON.stringify(newList));
       getData();
     }

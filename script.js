@@ -29,7 +29,7 @@ async function getData() {
               <img src="${element.image.url}" alt="" />
               <div class="card-content">
                 <h2>${element.name}</h2>
-                <button onclick="javascript : handelSearch(${id});" class="search-btn">Search</button>
+                <button onclick=" handelSearch(${id})" class="search-btn">Search</button>
                 <button onclick="javascript : handelFav(${id});" class="add-to-favourites">Add to Favourites</button>
               </div>
             </li>
@@ -37,6 +37,7 @@ async function getData() {
     });
   }
 }
+
 async function handelSearch(id) {
   // console.log(id);
   const url = `https://superheroapi.com/api.php/1699068923618895/${id}`;
