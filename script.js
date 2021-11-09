@@ -1,5 +1,7 @@
 const input = document.getElementById("search");
 const result = document.getElementById("cardID");
+const popUp = document.getElementById("pop-up");
+// console.log(popUp);
 var id;
 var favList = [];
 
@@ -55,23 +57,37 @@ async function handelFav(id) {
     ref.forEach((element) => {
       if (element.id == data.id) {
         flag = false;
-        alert(`${data.name} is Already added in list`);
+        popUp.classList.add("error");
+        popUp.innerText = `${data.name} is already added in list`;
+        setTimeout(() => {
+          popUp.classList.remove("error");
+        }, 2000);
+        // alert(`${data.name} is Already added in list`);
       }
     });
     if (flag) {
       let favList = [];
       favList = [...ref, data];
       localStorage.setItem("favList", JSON.stringify(favList));
-      alert(`${data.name} is Successfully added in list`);
+      popShow(data.name);
+      // alert(`${data.name} is Successfully added in list`);
     }
   }
   if (ref == null || ref == undefined) {
     let list = [data];
     localStorage.setItem("favList", JSON.stringify(list));
-    alert(`${data.name} is Successfully added in list`);
+    popShow(data.name);
+    // alert(`${data.name} is Successfully added in list`);
   }
 }
-
+function popShow(name) {
+  console.log(name);
+  popUp.classList.add("success");
+  popUp.innerText = `${name} is Successfully added in list`;
+  setTimeout(() => {
+    popUp.classList.remove("success");
+  }, 2000);
+}
 function setFavList() {
   const ref = JSON.parse(localStorage.favList);
   console.log(ref);

@@ -41,11 +41,43 @@ a {
   margin-top: 1vh;
   font-family: Arial, Helvetica, sans-serif;
 }
+.nav-bar .pop-up {
+  top: 0;
+  color: azure;
+  font-family: Arial, Helvetica, sans-serif;
+  position: fixed;
+  font-size: 20px;
+  margin-left: 30vw;
+  background-color: gray;
+  padding: 1vh 3vw;
+  border: 2px solid rgba(128, 128, 128, 0.192);
+  border-radius: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, top 0.2s, visibility 0.2s;
+}
+
+.nav-bar .success {
+  top: 2vh;
+  visibility: visible;
+  opacity: 1;
+  border-color: rgba(0, 128, 0, 0.596);
+  background-color: green;
+}
+.nav-bar .error {
+  top: 2vh;
+  visibility: visible;
+  opacity: 1;
+  border-color: rgb(255, 0, 0);
+  background-color: rgba(255, 0, 0, 0.596);
+}
 
 /* =============== MainIndex ================ */
 .mainIndex {
   width: 100vw;
-  /* height: auto; */
+  height: 100%;
+  /* min-height: 100vh; */
+  /* max-height: auto; */
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(./images/background.jpg);
   background-size: cover;
@@ -95,7 +127,6 @@ a {
   margin-top: 3vh;
   border-radius: 5px;
   width: 10vw;
-
   padding: 7px;
   cursor: pointer;
 }
@@ -116,8 +147,7 @@ a {
 /* ============= details =============== */
 
 .info-index .info-card {
-  width: 40vw;
-  /* height: 50vh; */
+  width: 35vw;
   padding: 0;
   color: black;
   display: flex;
@@ -125,12 +155,14 @@ a {
   align-items: center;
   margin: auto;
   font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+
   background-color: rgba(255, 255, 255, 0.315);
 }
 .info-index .info-card img {
   margin-top: 2vh;
-  width: 20vw;
-  height: 50vh;
+  width: 15vw;
+  height: 45vh;
   border-radius: 15px;
   box-shadow: 9px 10px 13px 0px #000000;
   /* width: 5vw;
@@ -177,13 +209,13 @@ a {
 /* ============= Favourites ============== */
 .fav-index {
   display: grid;
-  height: 100vh;
+  /* height: ; */
   grid-template-columns: auto auto auto;
   /* grid-auto-rows: auto; */
   grid-row-gap: 5px;
   align-items: center;
   justify-content: center;
-  overflow: auto;
+  /* overflow: auto; */
 }
 .fav-index .fav-card {
   height: auto;
@@ -191,6 +223,7 @@ a {
   color: black;
   margin: 5vh 5vw;
   background-color: rgba(255, 255, 255, 0.315);
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;

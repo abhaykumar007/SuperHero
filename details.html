@@ -7,7 +7,6 @@
     <title>Details</title>
 
     <link rel="stylesheet" href="style.css" />
-    <!-- <script src="./script.js" defer></script> -->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
     </style>
@@ -25,6 +24,7 @@
           <a href="">Hunter</a>
         </div>
       </div>
+      <div id="pop-up" class="pop-up">pop-up sample</div>
       <ul class="left">
         <a href="index.html">Home</a>
         <a href="favourites.html">Favourites</a>
@@ -69,14 +69,6 @@
               <p>${search.durability}</p>
             </div>
           </div>
-          <div class="table-row">
-            <div class="table-cell">
-              <p>Power</p>
-            </div>
-            <div class="table-cell">
-              <p>${search.power}</p>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -89,31 +81,45 @@
 
   <script>
     const card = document.querySelector(".info-card");
-    // console.log(localStorage.search);
+    const popUp = document.getElementById("pop-up");
     const search = JSON.parse(localStorage.search);
 
+    function popShow() {
+      popUp.classList.add("success");
+      popUp.innerText = `${search.name} is Successfully added in list`;
+      setTimeout(() => {
+        popUp.classList.remove("success");
+      }, 2000);
+    }
     function handelHeart() {
       var ref = JSON.parse(localStorage.getItem("favList"));
       let flag = true;
       if (ref != null) {
         ref.forEach((element) => {
           if (element.id == search.id) {
+            popUp.classList.add("error");
+            popUp.innerText = `${search.name} is already added in list`;
+            setTimeout(() => {
+              popUp.classList.remove("error");
+            }, 2000);
             flag = false;
-            alert(`${search.name} is Already added in list`);
           }
         });
         if (flag) {
           let favList = [];
           favList = [...ref, search];
           localStorage.setItem("favList", JSON.stringify(favList));
-          alert(`${search.name} is Successfully added in list`);
+          popShow();
+          // alert(`${search.name} is Successfully added in list`);
         }
       }
       if (ref == null || ref == undefined) {
         let list = [search];
         localStorage.setItem("favList", JSON.stringify(list));
-        alert(`${search.name} is Successfully added in list`);
+        popShow();
+        // alert(`${search.name} is Successfully added in list`);
       }
+
       getData();
     }
     function getData() {
@@ -165,6 +171,7 @@
               <p>${search.powerstats.speed}</p>
             </div>
           </div>
+
           <div class="table-row">
             <div class="table-cell">
               <p>Durability</p>
@@ -174,6 +181,7 @@
             </div>
          
           </div>
+          
             <div class="table-row">
             <div class="table-cell">
               <p>Power</p>

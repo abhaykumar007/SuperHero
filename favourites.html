@@ -24,6 +24,7 @@
           >
           <a href="">Hunter</a>
         </div>
+        <div id="pop-up" class="pop-up">pop-up sample</div>
       </div>
       <ul class="left">
         <a href="index.html">Home</a>
@@ -39,26 +40,31 @@
       </div> -->
     </main>
   </body>
+
   <script>
     const card = document.querySelector(".fav-index");
+    const popUp = document.getElementById("pop-up");
     // console.log(localStorage.favList);
 
     function getData() {
       const list = JSON.parse(localStorage.favList);
       card.innerHTML = "";
-      list.map((element, i) => {
-        id = element.id;
-        card.innerHTML += `<div class="fav-card">
+      if (list != null || list != undefined) {
+        list.map((element, i) => {
+          id = element.id;
+          name = element.name;
+          card.innerHTML += `<div class="fav-card">
         <img src="${element.image.url}" alt="" />
         <button onclick="handelHeart(${id});" id="heart">❤️️</button>
         <h2>${element.name}</h2>
       </div>`;
-      });
+        });
+      }
     }
 
     function handelHeart(id) {
       const list = JSON.parse(localStorage.favList);
-      console.log(id);
+      // console.log(ref);
       const newList = list.filter((element) => element.id != id);
       localStorage.setItem("favList", JSON.stringify(newList));
       getData();
