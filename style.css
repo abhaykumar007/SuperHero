@@ -75,9 +75,7 @@ a {
 /* =============== MainIndex ================ */
 .mainIndex {
   width: 100vw;
-  /* height: auto; */
   min-height: 100vh;
-  /* max-height: auto; */
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(./images/background.jpg);
   background-size: cover;
@@ -96,6 +94,21 @@ a {
   margin-left: 30vw;
   width: 30vw;
   outline: none;
+}
+@media screen and (max-width: 768px) {
+  .mainIndex .description {
+    font-size: 22px;
+    padding-top: 7vh;
+    font-family: "Dancing Script", cursive;
+    color: azure;
+  }
+  .mainIndex input {
+    margin-top: 4vh;
+    font-size: 18px;
+    width: 60vw;
+    outline: none;
+    margin-left: 10vh;
+  }
 }
 
 /* ================ Card ================ */
@@ -143,6 +156,34 @@ a {
   border-radius: 10px;
   box-shadow: 6px 7px 19px 0px #1b1a1a;
 }
+@media screen and (max-width: 768px) {
+  .mainIndex .card-container {
+    width: 60vw;
+    height: 70vh;
+    margin-left: 22vw;
+    font-size: 12px;
+    overflow: auto;
+  }
+  .mainIndex .result .card {
+    display: flex;
+    justify-content: space-around;
+  }
+  .mainIndex ul img {
+    margin-top: 0.3vh;
+    height: 20vh;
+    width: 18vw;
+    border-radius: 10px;
+    box-shadow: 6px 7px 19px 0px #1b1a1a;
+  }
+  .mainIndex .result .card-content button {
+    display: block;
+    margin-top: 3vh;
+    border-radius: 5px;
+    width: 22vw;
+    padding: 10px;
+    cursor: pointer;
+  }
+}
 
 /* ============= details =============== */
 
@@ -165,8 +206,6 @@ a {
   height: 45vh;
   border-radius: 15px;
   box-shadow: 9px 10px 13px 0px #000000;
-  /* width: 5vw;
-  height: 10vh; */
 }
 .info-card .info-card-header {
   margin-top: 2.5vh;
@@ -205,17 +244,35 @@ a {
 .info-card .table .table-row .table-cell-d {
   text-align: end;
 }
+@media screen and (max-width: 768px) {
+  .info-index .info-card {
+    width: 70vw;
+    padding: 0vh;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.315);
+  }
+  .info-index .info-card img {
+    margin-top: 2vh;
+    width: 40vw;
+    height: 45vh;
+    border-radius: 15px;
+    box-shadow: 9px 10px 13px 0px #000000;
+  }
+}
 
 /* ============= Favourites ============== */
 .fav-index {
   display: grid;
-  /* height: ; */
   grid-template-columns: auto auto auto;
-  /* grid-auto-rows: auto; */
   grid-row-gap: 5px;
   align-items: center;
   justify-content: center;
-  /* overflow: auto; */
 }
 .fav-index .fav-card {
   height: auto;
@@ -250,4 +307,34 @@ a {
 }
 .fav-card h2 {
   margin: 1vh 0;
+}
+
+@media screen and (max-width: 768px) {
+  .fav-index {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 5px;
+    align-items: center;
+    justify-content: center;
+  }
+  .fav-index .fav-card {
+    height: auto;
+    width: auto;
+    color: black;
+    margin: 5vh 5vw;
+    padding: 1vh;
+    background-color: rgba(255, 255, 255, 0.315);
+    border-radius: 20px;
+    display: flex;
+    transition: all 0.2s ease-in-out;
+    flex-direction: column;
+    align-items: center;
+  }
+  .fav-card img {
+    height: 30vh;
+    width: 22vw;
+    margin: 2vh 2vw;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 1px #000;
+  }
 }
