@@ -184,6 +184,15 @@ a {
     cursor: pointer;
   }
 }
+@media screen and (max-height: 700px) {
+  .mainIndex .card-container {
+    width: 60vw;
+    height: 70vh;
+    margin-left: 18vw;
+    font-size: 12px;
+    overflow: auto;
+  }
+}
 
 /* ============= details =============== */
 
