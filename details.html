@@ -71,7 +71,6 @@
           </div>
         </div>
       </div>
-
       <!--  <img src="${search.image.url}" alt="" /> -->
       <!-- &#9825; -->
       <!--  <button><img src="heart1.png" alt=""></button> -->
@@ -81,9 +80,10 @@
 
   <script>
     const card = document.querySelector(".info-card");
-    const popUp = document.getElementById("pop-up");
-    const search = JSON.parse(localStorage.search);
-
+    const popUp = document.querySelector(".pop-up");
+    let search = JSON.parse(localStorage.search);
+    // let search = localStorage.getItem("search");
+    // console.log("search", search);
     function popShow() {
       popUp.classList.add("success");
       popUp.innerText = `${search.name} is Successfully added in list`;
@@ -122,9 +122,11 @@
 
       getData();
     }
+
     function getData() {
       let flag = "♡";
-      const list = JSON.parse(localStorage.favList);
+      // let list = JSON.parse(localStorage.favList);
+      let list = localStorage.getItem("favList");
       if (list == null || list == undefined) {
         heart = "♡";
       } else {
@@ -134,9 +136,10 @@
           }
         });
       }
-      card.innerHTML = `<main class="mainIndex info-index">
+      if (search) {
+        card.innerHTML = `<main class="mainIndex info-index">
       <div class="info-card">
-         <img src="${search.image.url}" alt="" />
+         <img src="${search?.image.url}" alt="" />
          <h2 class=" info-card-header" >${search.name}</h2>
         <div class="table">
               <div class=" table-row">
@@ -192,6 +195,7 @@
           </div>
         </div>
       </div>`;
+      }
     }
     getData();
   </script>

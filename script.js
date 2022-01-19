@@ -43,7 +43,9 @@ async function handelSearch(id) {
   const url = `https://superheroapi.com/api.php/1699068923618895/${id}`;
   let response = await fetch(url);
   const data = await response.json();
+  console.log("data", data);
   localStorage.setItem("search", JSON.stringify(data));
+  // localStorage.setItem("search", data);
   input.value = "";
   location.href = "./details.html";
 }
