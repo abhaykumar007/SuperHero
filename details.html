@@ -81,7 +81,7 @@
   <script>
     const card = document.querySelector(".info-card");
     const popUp = document.querySelector(".pop-up");
-    let search = JSON.parse(localStorage.search);
+    let search = JSON.parse(localStorage.superheroCard);
     // let search = localStorage.getItem("search");
     // console.log("search", search);
     function popShow() {
@@ -127,7 +127,7 @@
       let flag = "♡";
       // let list = JSON.parse(localStorage.favList);
       let list = localStorage.getItem("favList");
-      if (list == null || list == undefined) {
+      if (list == null || list == undefined || list.length > 0) {
         heart = "♡";
       } else {
         list.forEach((element) => {
@@ -174,7 +174,6 @@
               <p>${search.powerstats.speed}</p>
             </div>
           </div>
-
           <div class="table-row">
             <div class="table-cell">
               <p>Durability</p>

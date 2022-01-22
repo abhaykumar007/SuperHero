@@ -44,7 +44,7 @@ async function handelSearch(id) {
   let response = await fetch(url);
   const data = await response.json();
   console.log("data", data);
-  localStorage.setItem("search", JSON.stringify(data));
+  localStorage.setItem("superheroCard", JSON.stringify(data));
   // localStorage.setItem("search", data);
   input.value = "";
   location.href = "./details.html";
