@@ -47,9 +47,12 @@
     // console.log(localStorage.favList);
 
     function getData() {
-      const list = JSON.parse(localStorage.favList);
+      let list = [];
+      if (localStorage.favList) {
+        list = JSON.parse(localStorage.favList);
+      }
       card.innerHTML = "";
-      if (list != null || list != undefined) {
+      if (list.length > 0) {
         list.map((element, i) => {
           id = element.id;
           card.innerHTML += `<div class="fav-card">
@@ -63,7 +66,7 @@
 
     function handelHeart(ref) {
       console.log("id", ref);
-      const list = JSON.parse(localStorage.favList);
+      let list = JSON.parse(localStorage.favList);
       // console.log(list);
       const newList = list.filter((element) => element.id != ref);
       // console.log(newList);
